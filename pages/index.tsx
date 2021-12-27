@@ -8,7 +8,7 @@ import Link from "next/link";
 const posts = [
   {
     title: "Boost your conversion rate",
-    href: "#",
+    href: "/posts/test",
     category: { name: "Article", href: "#" },
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
@@ -26,7 +26,7 @@ const posts = [
   },
   {
     title: "How to use search engine optimization to drive sales",
-    href: "#",
+    href: "/posts/test",
     category: { name: "Video", href: "#" },
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
@@ -44,7 +44,7 @@ const posts = [
   },
   {
     title: "Improve your customer experience",
-    href: "#",
+    href: "/posts/test",
     category: { name: "Case Study", href: "#" },
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
@@ -84,11 +84,12 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center">
             <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
-              From the blog
+              Alex Lazar's Blog
             </h2>
             <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa
-              libero labore natus atque, ducimus sed.
+              I'm Alex. I'm a front-end focused engineer working on web3
+              projects. On this blog, you can learn from my learning
+              experiences.
             </p>
           </div>
           <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
