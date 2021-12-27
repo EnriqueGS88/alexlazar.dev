@@ -2,10 +2,9 @@ import Link from "next/link";
 
 /* This example requires Tailwind CSS v2.0+ */
 const navigation = [
-  { name: "Solutions", href: "#" },
-  { name: "Pricing", href: "#" },
-  { name: "Docs", href: "#" },
-  { name: "Company", href: "#" },
+  { name: "Home", href: "/" },
+  { name: "Github", href: "https://github.com/lazaralex98" },
+  { name: "Twitter", href: "https://twitter.com/SaxeMauricede" },
 ];
 
 export default function Navbar() {
