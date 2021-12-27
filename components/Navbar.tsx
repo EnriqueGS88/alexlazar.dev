@@ -13,7 +13,11 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="w-full py-6 flex items-center justify-between border-b border-gray-500 lg:border-none">
           <div className="flex items-center">
-            <span className="text-white text-2xl">alexlazar.dev</span>
+            <Link href="/">
+              <a className="text-white text-2xl hover:underline">
+                alexlazar.dev
+              </a>
+            </Link>
             <div className="hidden ml-10 space-x-8 lg:block">
               {navigation.map((link) => (
                 <Link href={link.href}>

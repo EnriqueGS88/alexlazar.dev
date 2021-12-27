@@ -14,7 +14,7 @@ export default function Error() {
       <Head>
         <title>404</title>
         <Metatags
-          title="Alex Lazar's Blog"
+          title="404"
           description="Just a tech blog."
           url="https://alexlazar.dev"
           imageUrl="https://alexlazar.dev/images/vercel.svg"
