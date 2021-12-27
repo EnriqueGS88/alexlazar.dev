@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 /* This example requires Tailwind CSS v2.0+ */
 const navigation = [
   { name: "Solutions", href: "#" },
@@ -15,26 +17,28 @@ export default function Navbar() {
             <span className="text-white text-2xl">alexlazar.dev</span>
             <div className="hidden ml-10 space-x-8 lg:block">
               {navigation.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-base font-medium text-white hover:underline"
-                >
-                  {link.name}
-                </a>
+                <Link href={link.href}>
+                  <a
+                    key={link.name}
+                    className="text-base font-medium text-white hover:underline"
+                  >
+                    {link.name}
+                  </a>
+                </Link>
               ))}
             </div>
           </div>
         </div>
         <div className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
           {navigation.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-base font-medium text-white hover:underline"
-            >
-              {link.name}
-            </a>
+            <Link href={link.href}>
+              <a
+                key={link.name}
+                className="text-base font-medium text-white hover:underline"
+              >
+                {link.name}
+              </a>
+            </Link>
           ))}
         </div>
       </nav>

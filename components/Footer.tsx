@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 /* This example requires Tailwind CSS v2.0+ */
 const navigation = {
   main: [
@@ -83,25 +85,22 @@ export default function Footer() {
         >
           {navigation.main.map((item) => (
             <div key={item.name} className="px-5 py-2">
-              <a
-                href={item.href}
-                className="text-base text-gray-500 hover:text-gray-900"
-              >
-                {item.name}
-              </a>
+              <Link href={item.href}>
+                <a className="text-base text-gray-500 hover:text-gray-900">
+                  {item.name}
+                </a>
+              </Link>
             </div>
           ))}
         </nav>
         <div className="mt-8 flex justify-center space-x-6">
           {navigation.social.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-gray-400 hover:text-gray-500"
-            >
-              <span className="sr-only">{item.name}</span>
-              <item.icon className="h-6 w-6" aria-hidden="true" />
-            </a>
+            <Link href={item.href}>
+              <a key={item.name} className="text-gray-400 hover:text-gray-500">
+                <span className="sr-only">{item.name}</span>
+                <item.icon className="h-6 w-6" aria-hidden="true" />
+              </a>
+            </Link>
           ))}
         </div>
         <p className="mt-8 text-center text-base text-gray-400">
