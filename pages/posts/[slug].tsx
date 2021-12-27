@@ -16,6 +16,50 @@ const coverImage = {
   altText: "Whitney leaning against a railing on a downtown street",
   figCaption: "Cover image",
 };
+const summary =
+  "Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque. Blandit amet, sed aenean erat arcu morbi.";
+const content = `<p>
+                Sollicitudin tristique eros erat odio sed vitae, consequat
+                turpis elementum. Lorem nibh vel, eget pretium arcu vitae. Eros
+                eu viverra donec ut volutpat donec laoreet quam urna.
+              </p>
+              <p>
+                Bibendum eu nulla feugiat justo, elit adipiscing. Ut tristique
+                sit nisi lorem pulvinar. Urna, laoreet fusce nibh leo. Dictum et
+                et et sit. Faucibus sed non gravida lectus dignissim imperdiet
+                a.
+              </p>
+              <p>
+                Dictum magnis risus phasellus vitae quam morbi. Quis lorem lorem
+                arcu, metus, egestas netus cursus. In.
+              </p>
+              <ul role="list">
+                <li>Quis elit egestas venenatis mattis dignissim.</li>
+                <li>
+                  Cras cras lobortis vitae vivamus ultricies facilisis tempus.
+                </li>
+                <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
+              </ul>
+              <p>
+                Rhoncus nisl, libero egestas diam fermentum dui. At quis
+                tincidunt vel ultricies. Vulputate aliquet velit faucibus
+                semper. Pellentesque in venenatis vestibulum consectetur nibh
+                id. In id ut tempus egestas. Enim sit aliquam nec, a. Morbi enim
+                fermentum lacus in. Viverra.
+              </p>
+              <h3>How we helped</h3>
+              <p>
+                Tincidunt integer commodo, cursus etiam aliquam neque, et.
+                Consectetur pretium in volutpat, diam. Montes, magna cursus
+                nulla feugiat dignissim id lobortis amet. Laoreet sem est
+                phasellus eu proin massa, lectus. Diam rutrum posuere donec
+                ultricies non morbi. Mi a platea auctor mi.
+              </p>
+              <p>
+                Sagittis scelerisque nulla cursus in enim consectetur quam.
+                Dictum urna sed consectetur neque tristique pellentesque.
+                Blandit amet, sed aenean erat arcu morbi.
+              </p>`;
 
 export default function Post() {
   // TODO make backend with .md
@@ -93,21 +137,18 @@ export default function Post() {
                   <span className="ml-2">{coverImage.figCaption}</span>
                 </figcaption>
               </figure>
-              <div className="relative bg-black px-3 py-2 text-md text-white prose">
+              <div className="relative bg-gray-100 px-3 py-4 text-md text-black prose border-2 border-black">
                 <p>
                   You can subscribe to my newsletter to receive notifications
                   when I post new content.
                 </p>
                 <p>I won't spam you and you can unsubscribe at any time.</p>
                 <form
-                  onSubmit={() => {
-                    console.log("submited");
+                  onSubmit={(event) => {
+                    console.log("submited:", event);
                   }}
                 >
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-white"
-                  >
+                  <label htmlFor="email" className="block text-sm font-medium">
                     Email
                   </label>
                   <div className="mt-1">
@@ -116,72 +157,33 @@ export default function Post() {
                       name="email"
                       id="email"
                       autoComplete="email"
-                      className="shadow-sm focus:ring-blue-500 focus:border-blue-500 text-black block w-full sm:text-sm"
+                      className="border border-black focus:ring-blue-500 focus:border-blue-500 text-black block w-full sm:text-sm"
                     />
                   </div>
                   {/* TODO make beautiful btn like on https://www.peterlunch.com/snippets/next-image-styling */}
                   <button
                     type="submit"
-                    className="mt-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                    className={`group z-10 inline relative bg-white mt-3 py-2 px-4 text-sm font-medium text-black 
+                    border border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500
+                    before:content-[''] before:z-[0] before:block before:w-full before:h-full before:absolute before:top-2 before:left-2 
+                    before:transition-all before:bg-red-500 before:hover:top-0 before:hover:left-0`}
                   >
-                    Subscribe
+                    <div className="relative left-1 transition-all opacity-80 group-hover:left-0 group-hover:opacity-100">
+                      Subscribe
+                    </div>
                   </button>
                 </form>
               </div>
             </div>
           </div>
           <div className="mt-8 lg:mt-0 lg:col-span-2">
-            <div className="text-base max-w-prose mx-auto lg:max-w-none">
-              <p className="text-lg text-gray-500">
-                Sagittis scelerisque nulla cursus in enim consectetur quam.
-                Dictum urna sed consectetur neque tristique pellentesque.
-                Blandit amet, sed aenean erat arcu morbi.
-              </p>
+            <div className="text-base max-w-prose mx-auto lg:max-w-none border-b-2 py-4 border-b-black">
+              <p className="text-lg text-gray-900">{summary}</p>
             </div>
-            <div className="mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
-              <p>
-                Sollicitudin tristique eros erat odio sed vitae, consequat
-                turpis elementum. Lorem nibh vel, eget pretium arcu vitae. Eros
-                eu viverra donec ut volutpat donec laoreet quam urna.
-              </p>
-              <p>
-                Bibendum eu nulla feugiat justo, elit adipiscing. Ut tristique
-                sit nisi lorem pulvinar. Urna, laoreet fusce nibh leo. Dictum et
-                et et sit. Faucibus sed non gravida lectus dignissim imperdiet
-                a.
-              </p>
-              <p>
-                Dictum magnis risus phasellus vitae quam morbi. Quis lorem lorem
-                arcu, metus, egestas netus cursus. In.
-              </p>
-              <ul role="list">
-                <li>Quis elit egestas venenatis mattis dignissim.</li>
-                <li>
-                  Cras cras lobortis vitae vivamus ultricies facilisis tempus.
-                </li>
-                <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
-              </ul>
-              <p>
-                Rhoncus nisl, libero egestas diam fermentum dui. At quis
-                tincidunt vel ultricies. Vulputate aliquet velit faucibus
-                semper. Pellentesque in venenatis vestibulum consectetur nibh
-                id. In id ut tempus egestas. Enim sit aliquam nec, a. Morbi enim
-                fermentum lacus in. Viverra.
-              </p>
-              <h3>How we helped</h3>
-              <p>
-                Tincidunt integer commodo, cursus etiam aliquam neque, et.
-                Consectetur pretium in volutpat, diam. Montes, magna cursus
-                nulla feugiat dignissim id lobortis amet. Laoreet sem est
-                phasellus eu proin massa, lectus. Diam rutrum posuere donec
-                ultricies non morbi. Mi a platea auctor mi.
-              </p>
-              <p>
-                Sagittis scelerisque nulla cursus in enim consectetur quam.
-                Dictum urna sed consectetur neque tristique pellentesque.
-                Blandit amet, sed aenean erat arcu morbi.
-              </p>
-            </div>
+            <div
+              className="mt-5 prose prose-indigo text-gray-600 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1"
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
           </div>
         </div>
       </div>
