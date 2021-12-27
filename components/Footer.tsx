@@ -105,7 +105,7 @@ export default function Footer() {
           ))}
         </div>
         <p className="mt-8 text-center text-base text-gray-400">
-          &copy; 2021 Lazar Organization S.R.L. All rights reserved.
+          Made in Romania 🇷🇴
         </p>
       </div>
     </footer>
