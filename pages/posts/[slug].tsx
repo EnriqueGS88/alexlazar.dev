@@ -4,6 +4,7 @@ import Metatags from "../../components/Metatags";
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Image from "next/image";
+import axios from "axios";
 
 const title = "Nice post";
 const category = {
@@ -17,6 +18,32 @@ const coverImage = {
 };
 
 export default function Post() {
+  // TODO make backend with .md
+
+  async function subscribeToNewsletter(email) {
+    let headersList = {
+      Accept: "*/*",
+      "User-Agent": "Thunder Client (https://www.thunderclient.io)",
+      "Content-Type": "application/json; charset=utf-8",
+    };
+
+    let reqOptions = JSON.stringify({
+      url: "https://api.convertkit.com/v3/forms/2871455/subscribe",
+      method: "POST",
+      headers: headersList,
+      data:
+        '{ \n    "api_key": "NeIvJhiL4Cv-vr1w3_XIvg",\n    "email": "' +
+        email +
+        '"\n}',
+    });
+
+    // TODO integrate form with Convertkit
+
+    // axios.request(reqOptions).then(function (response) {
+    //   console.log(response.data);
+    // });
+  }
+
   return (
     <div className="font-mono bg-white overflow-hidden">
       <Head>
@@ -66,6 +93,41 @@ export default function Post() {
                   <span className="ml-2">{coverImage.figCaption}</span>
                 </figcaption>
               </figure>
+              <div className="relative bg-black px-3 py-2 text-md text-white prose">
+                <p>
+                  You can subscribe to my newsletter to receive notifications
+                  when I post new content.
+                </p>
+                <p>I won't spam you and you can unsubscribe at any time.</p>
+                <form
+                  onSubmit={() => {
+                    console.log("submited");
+                  }}
+                >
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-white"
+                  >
+                    Email
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      type="text"
+                      name="email"
+                      id="email"
+                      autoComplete="email"
+                      className="shadow-sm focus:ring-blue-500 focus:border-blue-500 text-black block w-full sm:text-sm"
+                    />
+                  </div>
+                  {/* TODO make beautiful btn like on https://www.peterlunch.com/snippets/next-image-styling */}
+                  <button
+                    type="submit"
+                    className="mt-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
           <div className="mt-8 lg:mt-0 lg:col-span-2">
