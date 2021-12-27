@@ -97,7 +97,6 @@ export default function Home() {
                 key={post.title}
                 className="flex flex-col border-2 border-black overflow-hidden"
               >
-                {/* <div className="bg-yellow-200 relative top-4 left-4 h-full w-full"></div> */}
                 <div className="flex-shrink-0">
                   <Link href={post.href}>
                     <a>
