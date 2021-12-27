@@ -48,14 +48,7 @@ export default function Post() {
             <div className="text-base mx-auto max-w-prose lg:max-w-none">
               <figure>
                 <div className="relative aspect-w-12 aspect-h-7 lg:aspect-none">
-                  {/* <img
-                    className="border-2 border-black object-cover object-center"
-                    src={coverImage.url}
-                    alt={coverImage.altText}
-                    width={1184}
-                    height={1376}
-                  /> */}
-                  <div className="relative border-2 border-black">
+                  <div className="relative border-2 border-black box-content">
                     <Image
                       width={500}
                       height={500}
@@ -65,7 +58,7 @@ export default function Post() {
                     />
                   </div>
                 </div>
-                <figcaption className="bg-black px-3 py-2 flex text-sm text-white">
+                <figcaption className="relative -top-3 bg-black px-3 py-2 flex text-sm text-white">
                   <CameraIcon
                     className="flex-none w-5 h-5 text-white"
                     aria-hidden="true"
