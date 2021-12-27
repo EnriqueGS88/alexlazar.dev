@@ -3,6 +3,7 @@ import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Metatags from "../components/Metatags";
 import Footer from "../components/Footer";
+import Link from "next/link";
 
 const posts = [
   {
@@ -98,32 +99,35 @@ export default function Home() {
               >
                 {/* <div className="bg-yellow-200 relative top-4 left-4 h-full w-full"></div> */}
                 <div className="flex-shrink-0">
-                  <a href={post.category.href}>
-                    <img
-                      className="h-48 w-full object-cover"
-                      src={post.imageUrl}
-                      alt=""
-                    />
-                  </a>
+                  <Link href={post.href}>
+                    <a>
+                      <img
+                        className="h-48 w-full object-cover"
+                        src={post.imageUrl}
+                        alt=""
+                      />
+                    </a>
+                  </Link>
                 </div>
                 <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                   <div className="flex-1">
                     <p className="text-sm font-medium text-white">
-                      <a
-                        href={post.category.href}
-                        className="inline-block bg-black px-3 py-2 hover:underline"
-                      >
-                        {post.category.name}
-                      </a>
+                      <Link href={post.category.href}>
+                        <a className="inline-block bg-black px-3 py-2 hover:underline">
+                          {post.category.name}
+                        </a>
+                      </Link>
                     </p>
-                    <a href={post.href} className="block mt-2 hover:opacity-60">
-                      <p className="text-xl font-semibold text-gray-900">
-                        {post.title}
-                      </p>
-                      <p className="mt-3 text-base text-gray-500">
-                        {post.description}
-                      </p>
-                    </a>
+                    <Link href={post.href}>
+                      <a className="block mt-2 hover:opacity-60">
+                        <p className="text-xl font-semibold text-gray-900">
+                          {post.title}
+                        </p>
+                        <p className="mt-3 text-base text-gray-500">
+                          {post.description}
+                        </p>
+                      </a>
+                    </Link>
                   </div>
                   <div className="mt-6 flex items-center">
                     <div className="flex space-x-1 text-sm text-gray-500">
