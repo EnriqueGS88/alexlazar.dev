@@ -6,6 +6,7 @@ import Navbar from "../../components/Navbar";
 import Image from "next/image";
 import axios from "axios";
 import Footer from "../../components/Footer";
+import parse from "html-react-parser";
 
 const title = "Nice post";
 const category = {
@@ -275,8 +276,9 @@ export default function Post() {
 
               
               text-gray-600 dark:text-white mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1"
-              dangerouslySetInnerHTML={{ __html: content }}
-            />
+            >
+              {parse(content)}
+            </div>
           </div>
         </div>
       </div>
