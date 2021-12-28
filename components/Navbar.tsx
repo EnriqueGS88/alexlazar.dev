@@ -5,6 +5,10 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "Github", href: "https://github.com/lazaralex98" },
   { name: "Twitter", href: "https://twitter.com/SaxeMauricede" },
+  {
+    name: "YouTube",
+    href: "https://www.youtube.com/channel/UCBTlMP2ODwm0_Apy4wMoy5g",
+  },
 ];
 
 export default function Navbar() {

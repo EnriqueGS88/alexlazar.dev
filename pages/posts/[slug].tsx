@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Image from "next/image";
 import axios from "axios";
+import Footer from "../../components/Footer";
 
 const title = "Nice post";
 const category = {
@@ -89,7 +90,7 @@ export default function Post() {
   }
 
   return (
-    <div className="font-mono bg-white overflow-hidden">
+    <div className="font-mono overflow-hidden">
       <Head>
         <title>{title}</title>
         <Metatags
@@ -101,7 +102,7 @@ export default function Post() {
       </Head>
       <Navbar />
       <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <div className="hidden lg:block border-l border-l-black bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen" />
+        <div className="hidden lg:block border-l border-l-black bg-gray-50 z-[-3] absolute top-0 bottom-0 left-3/4 w-screen" />
         <div className="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
           <div>
             <Link href={category.href}>
@@ -137,13 +138,14 @@ export default function Post() {
                   <span className="ml-2">{coverImage.figCaption}</span>
                 </figcaption>
               </figure>
-              <div className="relative bg-yellow-100 px-3 py-4 text-md text-black prose border-2 border-black">
+              <div className="relative bg-yellow-50 z-[0] px-3 py-4 text-md text-black prose border-2 border-black">
                 <p>
                   You can subscribe to my newsletter to receive notifications
                   when I post new content.
                 </p>
                 <p>I won't spam you and you can unsubscribe at any time.</p>
                 <form
+                  className="z-[1]"
                   onSubmit={(event) => {
                     console.log("submited:", event);
                   }}
@@ -157,15 +159,15 @@ export default function Post() {
                       name="email"
                       id="email"
                       autoComplete="email"
-                      className="border border-black focus:ring-blue-500 focus:border-blue-500 text-black block w-full sm:text-sm"
+                      className="py-3 px-5 text-md border border-black focus:ring-blue-500 focus:border-blue-500 text-black block w-full"
                     />
                   </div>
                   {/* TODO make beautiful btn like on https://www.peterlunch.com/snippets/next-image-styling */}
                   <button
                     type="submit"
-                    className="group inline relative mt-3 py-2 px-4 text-sm font-medium text-black 
+                    className="group inline relative mt-3 py-3 px-5 text-md font-medium text-black 
   border border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500
-  after:content-[''] after:z-[-10000000] after:block after:w-full after:h-full after:absolute after:top-2 after:left-2 
+  after:content-[''] after:z-[-1] after:block after:w-full after:h-full after:absolute after:top-1 after:left-1 
   after:transition-all after:bg-red-500 after:hover:top-0 after:hover:left-0"
                   >
                     <div className="relative left-1 transition-all opacity-80 group-hover:left-0 group-hover:opacity-100">
@@ -205,6 +207,7 @@ export default function Post() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
