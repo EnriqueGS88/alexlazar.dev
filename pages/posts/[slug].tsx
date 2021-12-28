@@ -169,7 +169,6 @@ export default function Post() {
                       className="py-3 px-5 text-md border border-black focus:ring-blue-500 focus:border-blue-500 text-black block w-full"
                     />
                   </div>
-                  {/* TODO make beautiful btn like on https://www.peterlunch.com/snippets/next-image-styling */}
                   <button
                     type="submit"
                     className="group inline relative mt-3 py-3 px-5 text-md font-medium text-black 
