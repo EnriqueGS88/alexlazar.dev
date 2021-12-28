@@ -277,6 +277,7 @@ export default function Post() {
               
               text-gray-600 dark:text-white mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1"
             >
+              {/* TODO how do I insert the content without parsing what's in <code> */}
               {parse(content)}
             </div>
           </div>
