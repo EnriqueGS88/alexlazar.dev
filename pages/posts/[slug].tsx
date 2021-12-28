@@ -163,10 +163,10 @@ export default function Post() {
                   {/* TODO make beautiful btn like on https://www.peterlunch.com/snippets/next-image-styling */}
                   <button
                     type="submit"
-                    className={`group z-[1000000] inline relative bg-white mt-3 py-2 px-4 text-sm font-medium text-black 
-                    border border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500
-                    after:content-[''] after:z-[-10000000] after:block after:w-full after:h-full after:absolute after:top-2 after:left-2 
-                    after:transition-all after:bg-red-500 after:hover:top-0 after:hover:left-0`}
+                    className="group inline relative mt-3 py-2 px-4 text-sm font-medium text-black 
+  border border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500
+  after:content-[''] after:z-[-10000000] after:block after:w-full after:h-full after:absolute after:top-2 after:left-2 
+  after:transition-all after:bg-red-500 after:hover:top-0 after:hover:left-0"
                   >
                     <div className="relative left-1 transition-all opacity-80 group-hover:left-0 group-hover:opacity-100">
                       Subscribe
