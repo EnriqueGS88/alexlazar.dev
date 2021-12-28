@@ -19,7 +19,7 @@ export default function Navbar() {
         <div className="w-full py-6 flex items-center justify-between border-b border-gray-500 lg:border-none">
           <div className="flex items-center">
             <Link href="/">
-              <a className="text-white text-2xl hover:underline">
+              <a className="text-white text-2xl hover:underline hover:underline-offset-8">
                 alexlazar.dev
               </a>
             </Link>
@@ -31,7 +31,9 @@ export default function Navbar() {
                     className="text-base font-medium text-white"
                   >
                     {link.icon}
-                    <span className="ml-2 hover:underline">{link.name}</span>
+                    <span className="ml-2 hover:underline hover:underline-offset-4">
+                      {link.name}
+                    </span>
                   </a>
                 </Link>
               ))}

@@ -48,6 +48,60 @@ const content = `<p>
                 </li>
                 <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
               </ul>
+              <ol role="list">
+                <li>Quis elit egestas venenatis mattis dignissim.</li>
+                <li>
+                  Cras cras lobortis vitae vivamus ultricies facilisis tempus.
+                </li>
+                <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
+              </ol>
+              <code>
+                <pre><input
+                type="text"
+                name="email"
+                id="email"
+                autoComplete="email"
+                className="py-3 px-5 text-md border border-black focus:ring-blue-500 focus:border-blue-500 text-black block w-full"
+                /></pre>
+            </code>
+            <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/CkC5sk3igzo"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen={true}
+      ></iframe>
+<table>
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Savings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>January</td>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <td>February</td>
+            <td>$120</td>
+          </tr>
+          <tr>
+            <td>March</td>
+            <td>$130</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Month</th>
+            <th>Savings</th>
+          </tr>
+        </tfoot>
+        <caption>Monthly savings</caption>
+      </table>
               <p>
                 Rhoncus nisl, libero egestas diam fermentum dui. At quis
                 tincidunt vel ultricies. Vulputate aliquet velit faucibus
@@ -108,6 +162,7 @@ export default function Post() {
         />
       </Head>
       <Navbar />
+
       <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <div className="hidden lg:block border-l border-l-black bg-gray-50 dark:bg-gray-800 z-[0] absolute top-0 bottom-0 left-3/4 w-screen" />
         <div className="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
@@ -202,8 +257,24 @@ export default function Post() {
                 {summary}
               </p>
             </div>
+            {/* TODO figure out how to make list markers black */}
             <div
-              className="mt-5 prose prose-indigo text-gray-600 dark:text-white mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1"
+              className="mt-5 prose prose-indigo dark:prose-invert
+              prose-img:border-2 prose-img:border-black prose-img:mb-0 
+
+
+              prose-ol:border-black prose-ol:border-2 prose-ol:px-16 prose-ol:py-5 prose-ol:bg-yellow-50 
+              dark:prose-ol:bg-teal-600 prose-ol:text-black prose-ol:decoration-black prose-ol:my-4
+              prose-ul:border-black prose-ul:border-2 prose-ul:px-16 prose-ul:py-5 prose-ul:bg-yellow-50 
+              dark:prose-ul:bg-teal-600 prose-ul:text-black prose-ul:decoration-black prose-ul:my-4
+              prose-li:text-black
+
+
+              prose-figcaption:mt-0 prose-figcaption:bg-black prose-figcaption:px-3 
+              prose-figcaption:py-2 prose-figcaption:text-white
+
+              
+              text-gray-600 dark:text-white mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1"
               dangerouslySetInnerHTML={{ __html: content }}
             />
           </div>
