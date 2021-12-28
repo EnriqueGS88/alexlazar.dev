@@ -172,6 +172,24 @@ export default function Post() {
                       Subscribe
                     </div>
                   </button>
+
+                  {/* thinking of using a non pseudo-element solution */}
+                  {/* <div className="group relative inline-block">
+                    <button
+                      type="submit"
+                      className={`z-[2] inline relative bg-white mt-3 py-2 px-4 text-sm font-medium text-black 
+                    border border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500
+                    `}
+                    >
+                      <div className="relative left-1 transition-all opacity-80 group-hover:left-0 group-hover:opacity-100">
+                        Subscribe
+                      </div>
+                    </button>
+                    <div
+                      className="z-[1] inline w-full h-full py-2 px-4 absolute top-2 left-2 
+                    transition-all bg-red-500 group-hover:top-0 group-hover:left-0"
+                    ></div>
+                </div>*/}
                 </form>
               </div>
             </div>
