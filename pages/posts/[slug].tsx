@@ -19,21 +19,28 @@ const coverImage = {
 };
 const summary =
   "Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque. Blandit amet, sed aenean erat arcu morbi.";
+
+// TODO make sure md also supports nice styling and dark mode styling
 const content = `<p>
-                Sollicitudin tristique eros erat odio sed vitae, consequat
-                turpis elementum. Lorem nibh vel, eget pretium arcu vitae. Eros
+                Sollicitudin <u>tristique eros erat</u> odio sed vitae, consequat
+                turpis elementum. <mark>Lorem nibh vel</mark>, eget pretium arcu vitae. Eros
                 eu viverra donec ut volutpat donec laoreet quam urna.
               </p>
               <p>
-                Bibendum eu nulla feugiat justo, elit adipiscing. Ut tristique
+                <strong>Bibendum eu nulla feugiat</strong> justo, elit adipiscing. Ut tristique
                 sit nisi lorem pulvinar. Urna, laoreet fusce nibh leo. Dictum et
-                et et sit. Faucibus sed non gravida lectus dignissim imperdiet
+                et et sit. <a href="#">Faucibus sed non</a> gravida lectus dignissim imperdiet
                 a.
               </p>
+              <blockquote>caca maca e e e </blockquote>
               <p>
                 Dictum magnis risus phasellus vitae quam morbi. Quis lorem lorem
                 arcu, metus, egestas netus cursus. In.
               </p>
+              <figure>
+                <img src="https://images.unsplash.com/photo-1502489597346-dad15683d4c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80" />
+                <figcaption>Blah blah blah - FIGCAPTION</figcaption>
+              </figure>
               <ul role="list">
                 <li>Quis elit egestas venenatis mattis dignissim.</li>
                 <li>
@@ -90,7 +97,7 @@ export default function Post() {
   }
 
   return (
-    <div className="font-mono overflow-hidden">
+    <div className="font-mono overflow-hidden bg-white dark:bg-gray-900 z-[-3]">
       <Head>
         <title>{title}</title>
         <Metatags
@@ -102,15 +109,15 @@ export default function Post() {
       </Head>
       <Navbar />
       <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <div className="hidden lg:block border-l border-l-black bg-gray-50 z-[-3] absolute top-0 bottom-0 left-3/4 w-screen" />
+        <div className="hidden lg:block border-l border-l-black bg-gray-50 dark:bg-gray-800 z-[0] absolute top-0 bottom-0 left-3/4 w-screen" />
         <div className="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
           <div>
             <Link href={category.href}>
-              <a className="text-base inline-block text-white bg-black px-3 py-2 font-semibold tracking-wide uppercase hover:underline">
+              <a className="text-base inline-block text-white bg-black dark:bg-gray-600 px-3 py-2 font-semibold tracking-wide uppercase hover:underline">
                 {category.title}
               </a>
             </Link>
-            <h3 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            <h3 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
               {title}
             </h3>
           </div>
@@ -138,7 +145,7 @@ export default function Post() {
                   <span className="ml-2">{coverImage.figCaption}</span>
                 </figcaption>
               </figure>
-              <div className="relative bg-yellow-50 z-[0] px-3 py-4 text-md text-black prose border-2 border-black">
+              <div className="relative bg-yellow-50 dark:bg-teal-600 z-[0] px-3 py-4 text-md text-black prose border-2 border-black">
                 <p>
                   You can subscribe to my newsletter to receive notifications
                   when I post new content.
@@ -174,34 +181,18 @@ export default function Post() {
                       Subscribe
                     </div>
                   </button>
-
-                  {/* thinking of using a non pseudo-element solution */}
-                  {/* <div className="group relative inline-block">
-                    <button
-                      type="submit"
-                      className={`z-[2] inline relative bg-white mt-3 py-2 px-4 text-sm font-medium text-black 
-                    border border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500
-                    `}
-                    >
-                      <div className="relative left-1 transition-all opacity-80 group-hover:left-0 group-hover:opacity-100">
-                        Subscribe
-                      </div>
-                    </button>
-                    <div
-                      className="z-[1] inline w-full h-full py-2 px-4 absolute top-2 left-2 
-                    transition-all bg-red-500 group-hover:top-0 group-hover:left-0"
-                    ></div>
-                </div>*/}
                 </form>
               </div>
             </div>
           </div>
           <div className="mt-8 lg:mt-0 lg:col-span-2">
             <div className="text-base max-w-prose mx-auto lg:max-w-none border-b-2 py-4 border-b-black">
-              <p className="text-lg text-gray-900">{summary}</p>
+              <p className="text-lg text-gray-900 dark:text-purple-200">
+                {summary}
+              </p>
             </div>
             <div
-              className="mt-5 prose prose-indigo text-gray-600 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1"
+              className="mt-5 prose prose-indigo text-gray-600 dark:text-white mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1"
               dangerouslySetInnerHTML={{ __html: content }}
             />
           </div>

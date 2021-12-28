@@ -54,7 +54,7 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t-2 border-t-black">
+    <footer className="bg-white dark:bg-black border-t-2 border-t-black dark:border-t-gray-50">
       <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
         <nav
           className="-mx-5 -my-2 flex flex-wrap justify-center"
@@ -63,7 +63,7 @@ export default function Footer() {
           {navigation.main.map((item) => (
             <div key={item.name} className="px-5 py-2">
               <Link href={item.href}>
-                <a className="text-base text-gray-500 hover:text-gray-900">
+                <a className="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">
                   {item.name}
                 </a>
               </Link>
@@ -73,7 +73,10 @@ export default function Footer() {
         <div className="mt-8 flex justify-center space-x-6">
           {navigation.social.map((item) => (
             <Link href={item.href}>
-              <a key={item.name} className="text-gray-400 hover:text-gray-500">
+              <a
+                key={item.name}
+                className="text-gray-400 dark:text-gray-400 hover:text-gray-500 dark:hover:text-gray-100"
+              >
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="h-6 w-6" aria-hidden="true" />
               </a>
