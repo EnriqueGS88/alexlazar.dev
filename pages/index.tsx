@@ -66,9 +66,9 @@ export default function Home() {
   return (
     <div className="font-mono">
       <Head>
-        <title>Alex Lazar's Blog</title>
+        <title>Alex Lazar - Blog</title>
         <Metatags
-          title="Alex Lazar's Blog"
+          title="Alex Lazar - Blog"
           description="Just a tech blog."
           url="https://alexlazar.dev"
           imageUrl="https://alexlazar.dev/images/vercel.svg"
