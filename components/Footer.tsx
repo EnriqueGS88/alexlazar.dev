@@ -3,12 +3,13 @@ import Link from "next/link";
 /* This example requires Tailwind CSS v2.0+ */
 const navigation = {
   main: [
-    { name: "Home", href: "#" },
-    { name: "Github", href: "https://github.com/lazaralex98" },
-    { name: "Twitter", href: "https://twitter.com/SaxeMauricede" },
+    { name: "Blog", href: "/", icon: "✍🏻" },
+    { name: "Github", href: "https://github.com/lazaralex98", icon: "👨🏻‍💻" },
+    { name: "Twitter", href: "https://twitter.com/SaxeMauricede", icon: "📱" },
     {
       name: "YouTube",
       href: "https://www.youtube.com/channel/UCBTlMP2ODwm0_Apy4wMoy5g",
+      icon: "📹",
     },
   ],
   social: [
@@ -63,8 +64,11 @@ export default function Footer() {
           {navigation.main.map((item) => (
             <div key={item.name} className="px-5 py-2">
               <Link href={item.href}>
-                <a className="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">
-                  {item.name}
+                <a className="text-base text-gray-500 dark:text-gray-400">
+                  {item.icon}
+                  <span className="ml-2 hover:text-gray-900 dark:hover:text-gray-100">
+                    {item.name}
+                  </span>
                 </a>
               </Link>
             </div>

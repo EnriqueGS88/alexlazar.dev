@@ -2,12 +2,13 @@ import Link from "next/link";
 
 /* This example requires Tailwind CSS v2.0+ */
 const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Github", href: "https://github.com/lazaralex98" },
-  { name: "Twitter", href: "https://twitter.com/SaxeMauricede" },
+  { name: "Blog", href: "/", icon: "✍🏻" },
+  { name: "Github", href: "https://github.com/lazaralex98", icon: "👨🏻‍💻" },
+  { name: "Twitter", href: "https://twitter.com/SaxeMauricede", icon: "📱" },
   {
     name: "YouTube",
     href: "https://www.youtube.com/channel/UCBTlMP2ODwm0_Apy4wMoy5g",
+    icon: "📹",
   },
 ];
 
@@ -27,9 +28,10 @@ export default function Navbar() {
                 <Link href={link.href}>
                   <a
                     key={link.name}
-                    className="text-base font-medium text-white hover:underline"
+                    className="text-base font-medium text-white"
                   >
-                    {link.name}
+                    {link.icon}
+                    <span className="ml-2 hover:underline">{link.name}</span>
                   </a>
                 </Link>
               ))}

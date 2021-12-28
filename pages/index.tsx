@@ -60,11 +60,101 @@ const posts = [
         "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     },
   },
+  {
+    title: "Improve your customer experience",
+    href: "/posts/test",
+    category: { name: "Case Study", href: "#" },
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
+    date: "Feb 12, 2020",
+    datetime: "2020-02-12",
+    imageUrl:
+      "https://images.unsplash.com/photo-1621243277275-ebcce6e6d79e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fHJvbWFuaWF8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
+    readingTime: "11 min",
+    author: {
+      name: "Daniela Metz",
+      href: "#",
+      imageUrl:
+        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    },
+  },
+  {
+    title: "Improve your customer experience",
+    href: "/posts/test",
+    category: { name: "Case Study", href: "#" },
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
+    date: "Feb 12, 2020",
+    datetime: "2020-02-12",
+    imageUrl:
+      "https://images.unsplash.com/photo-1621243277275-ebcce6e6d79e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fHJvbWFuaWF8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
+    readingTime: "11 min",
+    author: {
+      name: "Daniela Metz",
+      href: "#",
+      imageUrl:
+        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    },
+  },
+  {
+    title: "Improve your customer experience",
+    href: "/posts/test",
+    category: { name: "Case Study", href: "#" },
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
+    date: "Feb 12, 2020",
+    datetime: "2020-02-12",
+    imageUrl:
+      "https://images.unsplash.com/photo-1621243277275-ebcce6e6d79e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fHJvbWFuaWF8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
+    readingTime: "11 min",
+    author: {
+      name: "Daniela Metz",
+      href: "#",
+      imageUrl:
+        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    },
+  },
+  {
+    title: "Improve your customer experience",
+    href: "/posts/test",
+    category: { name: "Case Study", href: "#" },
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
+    date: "Feb 12, 2020",
+    datetime: "2020-02-12",
+    imageUrl:
+      "https://images.unsplash.com/photo-1621243277275-ebcce6e6d79e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fHJvbWFuaWF8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
+    readingTime: "11 min",
+    author: {
+      name: "Daniela Metz",
+      href: "#",
+      imageUrl:
+        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    },
+  },
+  {
+    title: "Improve your customer experience",
+    href: "/posts/test",
+    category: { name: "Case Study", href: "#" },
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
+    date: "Feb 12, 2020",
+    datetime: "2020-02-12",
+    imageUrl:
+      "https://images.unsplash.com/photo-1621243277275-ebcce6e6d79e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fHJvbWFuaWF8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
+    readingTime: "11 min",
+    author: {
+      name: "Daniela Metz",
+      href: "#",
+      imageUrl:
+        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    },
+  },
 ];
 
 export default function Home() {
   return (
-    <div className="font-mono ">
+    <div className="font-mono">
       <Head>
         <title>Alex Lazar - Blog</title>
         <Metatags
@@ -77,49 +167,27 @@ export default function Home() {
 
       <Navbar />
 
-      <div className="relative bg-gray-50 dark:bg-gray-800 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
-        <div className="absolute inset-0">
-          <div className="bg-white dark:bg-gray-900 h-1/3 sm:h-2/3" />
-        </div>
-        <div className="relative max-w-7xl mx-auto">
-          <div className="text-center">
+      <div className="z-[-1] bg-white dark:bg-gray-900 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+        <div className="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
+          <div>
             <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-4xl">
-              Alex Lazar's Blog
+              I'm Alex
             </h2>
-            <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 dark:text-purple-200 sm:mt-4">
-              I'm Alex. I'm a front-end focused engineer working on web3
-              projects. On this blog, you can learn from my learning
-              experiences.
-            </p>
+            <div className="mt-3 sm:mt-4">
+              <p className="mt-3 max-w-4xl text-xl text-gray-500 dark:text-purple-200 sm:mt-4">
+                I'm a front-end focused engineer working on web3 projects. On
+                this blog, I will try my best to document my career and learning
+                experiences.
+              </p>
+            </div>
           </div>
-          <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+          <div className="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
             {posts.map((post) => (
               <div
                 key={post.title}
                 className="flex flex-col border-2 border-black overflow-hidden"
               >
-                <div className="flex-shrink-0">
-                  <Link href={post.href}>
-                    <a className="relative">
-                      {/* <img
-                        className="h-48 w-full object-cover"
-                        src={post.imageUrl}
-                        alt=""
-                      /> */}
-
-                      {/* TODO using the Image component creates a space under it */}
-                      <Image
-                        className="h-48 w-full object-cover hover:opacity-60"
-                        src={post.imageUrl}
-                        width={415}
-                        height={210}
-                        objectFit="cover"
-                        alt=""
-                      />
-                    </a>
-                  </Link>
-                </div>
-                <div className="relative flex-1 bg-yellow-50 dark:bg-teal-600 p-6 flex flex-col justify-between">
+                <div className="z-[2] relative flex-1 bg-yellow-50 dark:bg-gray-700 p-6 flex flex-col justify-between">
                   <div className="flex-1">
                     <p className="text-sm font-medium text-white">
                       <Link href={post.category.href}>
@@ -130,13 +198,32 @@ export default function Home() {
                     </p>
                     <Link href={post.href}>
                       <a className="block mt-2 hover:opacity-60">
-                        <p className="text-xl font-semibold text-black">
+                        <p className="text-xl font-semibold text-gray-100">
                           {post.title}
                         </p>
-                        <p className="mt-3 text-base text-gray-900">
+                        <p className="mt-3 text-base text-gray-300">
                           {post.description}
                         </p>
                       </a>
+                    </Link>
+                    <Link href={post.href}>
+                      <button
+                        type="submit"
+                        className="group inline relative mt-3 py-3 px-5 text-md font-medium text-black 
+  border border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500
+  after:content-[''] after:z-[-1] after:block after:w-full after:h-full after:absolute after:top-1 after:left-1 
+  after:transition-all after:bg-red-500 after:hover:top-0 after:hover:left-0"
+                      >
+                        <div className="relative left-1 transition-all opacity-80 group-hover:left-0 group-hover:opacity-100">
+                          Read more
+                          <span className="transition-all group-hover:opacity-0 group-hover:">
+                            ...
+                          </span>
+                          <span className="relative transition-all opacity-0 left-0 group-hover:opacity-100 group-hover:-left-4">
+                            {"👀"}
+                          </span>
+                        </div>
+                      </button>
                     </Link>
                   </div>
                 </div>

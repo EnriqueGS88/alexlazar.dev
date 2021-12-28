@@ -179,6 +179,12 @@ export default function Post() {
                   >
                     <div className="relative left-1 transition-all opacity-80 group-hover:left-0 group-hover:opacity-100">
                       Subscribe
+                      <span className="transition-all group-hover:opacity-0 group-hover:">
+                        ...
+                      </span>
+                      <span className="relative transition-all opacity-0 left-0 group-hover:opacity-100 group-hover:-left-4">
+                        {"📧"}
+                      </span>
                     </div>
                   </button>
                 </form>
