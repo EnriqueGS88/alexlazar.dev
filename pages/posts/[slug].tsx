@@ -56,15 +56,7 @@ const content = `<p>
                 </li>
                 <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
               </ol>
-              <code>
-                <pre><input
-                type="text"
-                name="email"
-                id="email"
-                autoComplete="email"
-                className="py-3 px-5 text-md border border-black focus:ring-blue-500 focus:border-blue-500 text-black block w-full"
-                /></pre>
-            </code>
+              <pre><code>function call() {}</code></pre>
             <iframe
         width="100%"
         height="400"
@@ -273,6 +265,23 @@ export default function Post() {
 
               prose-figcaption:mt-0 prose-figcaption:bg-black prose-figcaption:px-3 
               prose-figcaption:py-2 prose-figcaption:text-white
+
+
+              prose-blockquote:text-4xl prose-blockquote:my-2 prose-blockquote:pl-3 
+              prose-blockquote:border-l-8 prose-blockquote:border-l-black dark:prose-blockquote:border-l-white
+
+
+              prose-pre:border-2 prose-pre:border-black prose-pre:rounded-none 
+              prose-pre:bg-purple-100 prose-pre:text-black prose-pre:relative
+              before:prose-pre:content-['code'] before:prose-pre:absolute 
+              prose-pre:overflow-visible before:prose-pre:bg-black before:prose-pre:text-white
+              before:prose-pre:px-3
+              before:prose-pre:-top-6 before:prose-pre:left-1 prose-pre:mt-10
+
+
+              prose-table:border-2 prose-table:border-black prose-th:p-4 prose-th:bg-yellow-50 
+              prose-th:border-y-2 prose-th:border-y-black prose-td:p-4 dark:prose-th:bg-teal-600 
+              dark:prose-table:bg-gray-800
 
               
               text-gray-600 dark:text-white mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1"
