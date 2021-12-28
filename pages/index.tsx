@@ -15,7 +15,7 @@ const posts = [
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
     imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
+      "https://images.unsplash.com/photo-1566827954254-0c0692424c04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDF8fHJvbWFuaWF8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
     readingTime: "6 min",
     author: {
       name: "Roel Aufderehar",
@@ -33,7 +33,7 @@ const posts = [
     date: "Mar 10, 2020",
     datetime: "2020-03-10",
     imageUrl:
-      "https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
+      "https://images.unsplash.com/photo-1610909762155-02fcc33e03d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fHJvbWFuaWF8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
     readingTime: "4 min",
     author: {
       name: "Brenna Goyette",
@@ -51,7 +51,7 @@ const posts = [
     date: "Feb 12, 2020",
     datetime: "2020-02-12",
     imageUrl:
-      "https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
+      "https://images.unsplash.com/photo-1621243277275-ebcce6e6d79e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fHJvbWFuaWF8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
     readingTime: "11 min",
     author: {
       name: "Daniela Metz",
@@ -100,16 +100,26 @@ export default function Home() {
               >
                 <div className="flex-shrink-0">
                   <Link href={post.href}>
-                    <a>
-                      <img
+                    <a className="relative">
+                      {/* <img
                         className="h-48 w-full object-cover"
                         src={post.imageUrl}
+                        alt=""
+                      /> */}
+
+                      {/* TODO using the Image component creates a space under it */}
+                      <Image
+                        className="h-48 w-full object-cover hover:opacity-60"
+                        src={post.imageUrl}
+                        width={415}
+                        height={210}
+                        objectFit="cover"
                         alt=""
                       />
                     </a>
                   </Link>
                 </div>
-                <div className="flex-1 bg-yellow-50 dark:bg-teal-600 p-6 flex flex-col justify-between">
+                <div className="relative flex-1 bg-yellow-50 dark:bg-teal-600 p-6 flex flex-col justify-between">
                   <div className="flex-1">
                     <p className="text-sm font-medium text-white">
                       <Link href={post.category.href}>
@@ -129,14 +139,14 @@ export default function Home() {
                       </a>
                     </Link>
                   </div>
-                  <div className="mt-6 flex items-center">
-                    <div className="flex space-x-1 text-sm text-gray-800">
-                      <time dateTime={post.datetime}>{post.date}</time>
-                      <span aria-hidden="true">&middot;</span>
-                      <span>{post.readingTime} read</span>
-                    </div>
-                  </div>
                 </div>
+                <figcaption className="relative bg-black px-6 py-2 flex items-center text-sm text-white">
+                  <div className="flex space-x-1">
+                    <time dateTime={post.datetime}>{post.date}</time>
+                    <span aria-hidden="true">&middot;</span>
+                    <span>{post.readingTime} read</span>
+                  </div>
+                </figcaption>
               </div>
             ))}
           </div>

@@ -13,9 +13,9 @@ const category = {
   href: "#",
 };
 const coverImage = {
-  url: "https://images.unsplash.com/photo-1546913199-55e06682967e?ixlib=rb-1.2.1&auto=format&fit=crop&crop=focalpoint&fp-x=.735&fp-y=.55&w=1184&h=1376&q=80",
+  url: "https://images.unsplash.com/photo-1610909762155-02fcc33e03d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fHJvbWFuaWF8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
   altText: "Whitney leaning against a railing on a downtown street",
-  figCaption: "Cover image",
+  figCaption: "Podul Minciunilor, Sibiu",
 };
 const summary =
   "Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque. Blandit amet, sed aenean erat arcu morbi.";
@@ -145,7 +145,7 @@ export default function Post() {
                   <span className="ml-2">{coverImage.figCaption}</span>
                 </figcaption>
               </figure>
-              <div className="relative bg-yellow-50 dark:bg-teal-600 z-[0] px-3 py-4 text-md text-black prose border-2 border-black">
+              <div className="mt-3 relative bg-yellow-50 dark:bg-teal-600 z-[0] px-3 py-4 text-md text-black prose border-2 border-black">
                 <p>
                   You can subscribe to my newsletter to receive notifications
                   when I post new content.
@@ -182,6 +182,12 @@ export default function Post() {
                     </div>
                   </button>
                 </form>
+              </div>
+              <div className="mt-6 relative bg-gray-50 dark:bg-gray-400 z-[0] px-3 py-4 text-md text-black prose border-2 border-black">
+                <p>
+                  *Fun fact* The 3 colors under the navbar are Romania's flag
+                  🇷🇴.
+                </p>
               </div>
             </div>
           </div>
