@@ -7,15 +7,16 @@ import Image from "next/image";
 import axios from "axios";
 import Footer from "../../components/Footer";
 import parse from "html-react-parser";
+import IfcPost from "../../utils/IfcPost";
 import IfcPostMeta from "../../utils/IfcPostMeta";
 import getPostBySlug from "../../utils/getPostBySlug";
 import markdownToHtml from "../../utils/markdownToHTML";
 import getAllPosts from "../../utils/getAllPosts";
 
 export async function getStaticProps(context) {
-  const post = getPostBySlug(context.params.slug);
-  const meta = post.meta;
-  const content = await markdownToHtml(post.content || "");
+  const post: IfcPost = getPostBySlug(context.params.slug);
+  const meta: IfcPostMeta = post.meta;
+  const content: string = await markdownToHtml(post.content || "");
   return {
     props: { meta, content },
   };

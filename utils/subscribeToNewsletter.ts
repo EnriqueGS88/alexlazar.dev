@@ -1,4 +1,11 @@
-export default async function subscribeToNewsletter(email) {
+/**
+ *
+ * @param email email of user to be subscribed to newsletter
+ * @returns true or false based on success
+ */
+export default async function subscribeToNewsletter(
+  email: string
+): Promise<boolean> {
   let headersList = {
     Accept: "*/*",
     "User-Agent": "Thunder Client (https://www.thunderclient.io)",
@@ -20,4 +27,5 @@ export default async function subscribeToNewsletter(email) {
   // axios.request(reqOptions).then(function (response) {
   //   console.log(response.data);
   // });
+  return true;
 }
