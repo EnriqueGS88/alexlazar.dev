@@ -1,5 +1,20 @@
 import axios from "axios";
 
+interface IfcResponse {
+  subscription: {
+    id: number;
+    state: string;
+    created_at: string;
+    source?: any;
+    referrer?: any;
+    subscribable_id: number;
+    subscribable_type: string;
+    subscriber: {
+      id: number;
+    };
+  };
+}
+
 /**
  *
  * @param email email of user to be subscribed to newsletter
@@ -8,25 +23,29 @@ import axios from "axios";
 export default async function subscribeToNewsletter(
   email: string
 ): Promise<boolean> {
-  let headersList = {
-    Accept: "*/*",
-    "User-Agent": "Thunder Client (https://www.thunderclient.io)",
-    "Content-Type": "application/json; charset=utf-8",
-  };
+  try {
+    let headersList = {
+      Accept: "*/*",
+      "Content-Type": "application/json; charset=utf-8",
+    };
 
-  let reqOptions = {
-    url: "https://api.convertkit.com/v3/forms/2871455/subscribe",
-    method: "POST",
-    headers: headersList,
-    data:
-      '{ \n    "api_key": "NeIvJhiL4Cv-vr1w3_XIvg",\n    "email": "' +
-      email +
-      '"\n}',
-  };
+    let reqOptions = {
+      url: "https://api.convertkit.com/v3/forms/2871455/subscribe",
+      method: "POST",
+      headers: headersList,
+      data:
+        '{ \n    "api_key": "NeIvJhiL4Cv-vr1w3_XIvg",\n    "email": "' +
+        email +
+        '"\n}',
+    };
 
-  //@ts-ignore
-  axios.request(reqOptions).then(function (response) {
-    console.log(response.data);
-  });
-  return true;
+    //@ts-ignore
+    const response = await axios.request(reqOptions);
+    if (response.status === 200) {
+      return true;
+    }
+    return false;
+  } catch (error) {
+    return false;
+  }
 }

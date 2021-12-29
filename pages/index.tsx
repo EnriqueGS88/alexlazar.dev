@@ -1,18 +1,17 @@
 import Head from "next/head";
-import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Metatags from "../components/Metatags";
 import Footer from "../components/Footer";
 import Link from "next/link";
-import IfcPostMeta from "../utils/IfcPostMeta";
 import getAllPosts from "../utils/getAllPosts";
 import IfcPost from "../utils/IfcPost";
+import Button from "../components/Button";
 
 export async function getStaticProps(context) {
   const posts = getAllPosts();
   return {
     props: { posts },
-    revalidate: 60 * 60 * 24, // reavlidate daily
+    revalidate: 60 * 60 * 24, // revalidate daily
   };
 }
 
@@ -68,24 +67,17 @@ export default function Home({ posts }: { posts: IfcPost[] }) {
                         </p>
                       </a>
                     </Link>
-                    <Link href={`/posts/${post.slug}/`}>
-                      <button
-                        className="group inline relative mt-3 py-3 px-5 text-md font-medium text-black 
-  border border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500
-  after:content-[''] after:z-[-1] after:block after:w-full after:h-full after:absolute after:top-1 after:left-1 
-  after:transition-all after:bg-red-500 after:hover:top-0 after:hover:left-0"
-                      >
-                        <div className="relative left-1 transition-all opacity-80 group-hover:left-0 group-hover:opacity-100">
-                          Read more
-                          <span className="transition-all group-hover:opacity-0 group-hover:">
-                            ...
-                          </span>
-                          <span className="relative transition-all opacity-0 left-0 group-hover:opacity-100 group-hover:-left-4">
-                            {"👀"}
-                          </span>
-                        </div>
-                      </button>
-                    </Link>
+                    <Button type="link" href={`/posts/${post.slug}/`}>
+                      <div className="relative left-1 transition-all opacity-80 group-hover:left-0 group-hover:opacity-100">
+                        Read more
+                        <span className="transition-all group-hover:opacity-0 group-hover:">
+                          ...
+                        </span>
+                        <span className="relative transition-all opacity-0 left-0 group-hover:opacity-100 group-hover:-left-4">
+                          {"👀"}
+                        </span>
+                      </div>
+                    </Button>
                   </div>
                 </div>
                 <figcaption className="relative bg-black px-6 py-2 flex items-center text-sm text-white">
