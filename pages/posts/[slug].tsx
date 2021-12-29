@@ -9,6 +9,7 @@ import Footer from "../../components/Footer";
 import parse from "html-react-parser";
 import IfcPostMeta from "../../utils/IfcPostMeta";
 import getPostBySlug from "../../utils/getPostBySlug";
+import markdownToHtml from "../../utils/markdownToHTML";
 
 export async function getStaticProps(context) {
   const post = getPostBySlug(context.params.slug);
@@ -24,40 +25,19 @@ export async function getStaticPaths() {
   };
 }
 
-export default function Post({ post }: { post: IfcPostMeta }) {
-  async function subscribeToNewsletter(email) {
-    let headersList = {
-      Accept: "*/*",
-      "User-Agent": "Thunder Client (https://www.thunderclient.io)",
-      "Content-Type": "application/json; charset=utf-8",
-    };
-
-    let reqOptions = JSON.stringify({
-      url: "https://api.convertkit.com/v3/forms/2871455/subscribe",
-      method: "POST",
-      headers: headersList,
-      data:
-        '{ \n    "api_key": "NeIvJhiL4Cv-vr1w3_XIvg",\n    "email": "' +
-        email +
-        '"\n}',
-    });
-
-    // TODO integrate form with Convertkit
-
-    // axios.request(reqOptions).then(function (response) {
-    //   console.log(response.data);
-    // });
-  }
+export default function Post({ post }: any) {
+  const meta: IfcPostMeta = post.meta;
+  console.log("post:", post);
 
   return (
     <div className="font-mono overflow-hidden bg-white dark:bg-gray-900 z-[-3]">
       <Head>
-        <title>{post.title}</title>
+        <title>{meta.title}</title>
         <Metatags
-          title={post.title}
-          description={post.excerpt}
-          url={`https://alexlazar.dev${`/posts/${post.slug}/`}`}
-          imageUrl={`https://alexlazar.dev${`/posts/${post.coverImage.url}/`}`}
+          title={meta.title}
+          description={meta.excerpt}
+          url={`https://alexlazar.dev${`/posts/${meta.slug}/`}`}
+          imageUrl={`https://alexlazar.dev${`/posts/${meta.coverImage.url}/`}`}
         />
       </Head>
       <Navbar />
@@ -67,10 +47,10 @@ export default function Post({ post }: { post: IfcPostMeta }) {
         <div className="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
           <div>
             <span className="text-base inline-block text-white bg-black dark:bg-gray-600 px-3 py-2 font-semibold tracking-wide uppercase">
-              {post.category}
+              {meta.category}
             </span>
             <h3 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-              {post.title}
+              {meta.title}
             </h3>
           </div>
         </div>
@@ -78,7 +58,7 @@ export default function Post({ post }: { post: IfcPostMeta }) {
           <div className="my-8 lg:mt-0 lg:col-span-2">
             <div className="text-base max-w-prose mx-auto lg:max-w-none border-b-2 py-4 border-b-black">
               <p className="text-lg text-gray-900 dark:text-purple-200">
-                {post.excerpt}
+                {meta.excerpt}
               </p>
             </div>
             <div
@@ -119,7 +99,7 @@ export default function Post({ post }: { post: IfcPostMeta }) {
               
               text-gray-600 dark:text-white mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1"
             >
-              {parse(post.content)}
+              {markdownToHtml(post.content)}
             </div>
           </div>
           <div className="relative lg:row-start-1 lg:col-start-3">
@@ -131,8 +111,8 @@ export default function Post({ post }: { post: IfcPostMeta }) {
                     className="border-2 border-black object-cover object-center"
                     width={500}
                     height={500}
-                    src={post.coverImage.url}
-                    alt={post.coverImage.altText}
+                    src={meta.coverImage.url}
+                    alt={meta.coverImage.altText}
                   />
                 </div>
                 <figcaption className="relative -top-3 bg-black px-3 py-2 flex text-sm text-white">
@@ -140,7 +120,7 @@ export default function Post({ post }: { post: IfcPostMeta }) {
                     className="flex-none w-5 h-5 text-white"
                     aria-hidden="true"
                   />
-                  <span className="ml-2">{post.coverImage.caption}</span>
+                  <span className="ml-2">{meta.coverImage.caption}</span>
                 </figcaption>
               </figure>
               <div className="mt-3 relative bg-yellow-50 dark:bg-teal-600 z-[0] px-3 py-4 text-md text-black prose border-2 border-black">
