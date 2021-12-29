@@ -17,7 +17,7 @@ export default function Error() {
           title="404"
           description="Just a tech blog."
           url="https://alexlazar.dev"
-          imageUrl="https://alexlazar.dev/images/vercel.svg"
+          imageUrl="https://alexlazar.dev/404.jpg"
         />
       </Head>
       <div className="bg-white dark:bg-gray-900 dark:text-white min-h-full flex flex-col lg:relative">

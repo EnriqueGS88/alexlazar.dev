@@ -24,7 +24,7 @@ export default function Home({ posts }: { posts: IfcPost[] }) {
           title="Alex Lazar - Blog"
           description="Just a tech blog."
           url="https://alexlazar.dev"
-          imageUrl="https://alexlazar.dev/images/vercel.svg"
+          imageUrl="https://alexlazar.dev/404.jpg"
         />
       </Head>
 

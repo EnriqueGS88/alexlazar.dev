@@ -71,7 +71,7 @@ export default function Post({
           title={meta.title}
           description={meta.excerpt}
           url={`https://alexlazar.dev${`/posts/${meta.slug}/`}`}
-          imageUrl={`https://alexlazar.dev${`/posts/${meta.coverImage.url}/`}`}
+          imageUrl={meta.coverImage.url}
         />
       </Head>
       <Navbar />
