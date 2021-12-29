@@ -35,13 +35,13 @@ export default function Home({ posts }: { posts: IfcPost[] }) {
         <div className="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
           <div>
             <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-4xl">
-              I'm Alex
+              {"I'm"} Alex
             </h2>
             <div className="mt-3 sm:mt-4">
               <p className="mt-3 max-w-4xl text-xl text-gray-500 dark:text-purple-200 sm:mt-4">
-                I'm a front-end focused engineer working on web3 projects. On
-                this blog, I will try my best to document my career and learning
-                experiences.
+                {"I'm"} a front-end focused engineer working on web3 projects.
+                On this blog, I will try my best to document my career and
+                learning experiences.
               </p>
             </div>
           </div>
@@ -70,7 +70,6 @@ export default function Home({ posts }: { posts: IfcPost[] }) {
                     </Link>
                     <Link href={`/posts/${post.slug}/`}>
                       <button
-                        type="submit"
                         className="group inline relative mt-3 py-3 px-5 text-md font-medium text-black 
   border border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500
   after:content-[''] after:z-[-1] after:block after:w-full after:h-full after:absolute after:top-1 after:left-1 

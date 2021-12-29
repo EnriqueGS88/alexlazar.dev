@@ -143,7 +143,7 @@ export default function Post({
                   You can subscribe to my newsletter to receive notifications
                   when I post new content.
                 </p>
-                <p>I won't spam you and you can unsubscribe at any time.</p>
+                <p>I {"won't"} spam you and you can unsubscribe at any time.</p>
                 <form
                   className="z-[1]"
                   onSubmit={(event) => {
@@ -183,8 +183,8 @@ export default function Post({
               </div>
               <div className="mt-6 relative bg-gray-50 dark:bg-gray-400 z-[0] px-3 py-4 text-md text-black prose border-2 border-black">
                 <p>
-                  *Fun fact* The 3 colors under the navbar are Romania's flag
-                  🇷🇴.
+                  *Fun fact* The 3 colors under the navbar are {"Romania's"}{" "}
+                  flag 🇷🇴.
                 </p>
               </div>
             </div>
