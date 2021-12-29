@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Error() {
+  // TODO dark mode for error page
   return (
     <div className="font-mono h-full">
       <Helmet>
