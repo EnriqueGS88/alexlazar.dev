@@ -24,12 +24,9 @@ export default function Navbar() {
               </a>
             </Link>
             <div className="hidden ml-10 space-x-8 lg:block">
-              {navigation.map((link) => (
-                <Link href={link.href}>
-                  <a
-                    key={link.name}
-                    className="text-base font-medium text-white"
-                  >
+              {navigation.map((link, index) => (
+                <Link key={link.name} href={link.href}>
+                  <a className="text-base font-medium text-white">
                     {link.icon}
                     <span className="ml-2 hover:underline hover:underline-offset-4">
                       {link.name}
@@ -41,12 +38,9 @@ export default function Navbar() {
           </div>
         </div>
         <div className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
-          {navigation.map((link) => (
-            <Link href={link.href}>
-              <a
-                key={link.name}
-                className="text-base font-medium text-white hover:underline"
-              >
+          {navigation.map((link, index) => (
+            <Link key={link.name} href={link.href}>
+              <a className="text-base font-medium text-white hover:underline">
                 {link.name}
               </a>
             </Link>

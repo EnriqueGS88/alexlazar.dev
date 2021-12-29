@@ -40,7 +40,7 @@ export default function Post({
   content,
 }: {
   meta: IfcPostMeta;
-  content: any;
+  content: string;
 }) {
   return (
     <div className="font-mono overflow-hidden bg-white dark:bg-gray-900 z-[-3]">
