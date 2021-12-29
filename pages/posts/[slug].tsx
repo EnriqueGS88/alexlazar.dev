@@ -42,8 +42,6 @@ export default function Post({
   meta: IfcPostMeta;
   content: any;
 }) {
-  console.log("content:", content);
-
   return (
     <div className="font-mono overflow-hidden bg-white dark:bg-gray-900 z-[-3]">
       <Head>
@@ -114,7 +112,7 @@ export default function Post({
               
               text-gray-600 dark:text-white mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1"
             >
-              {content}
+              {parse(content)}
             </div>
           </div>
           <div className="relative lg:row-start-1 lg:col-start-3">
