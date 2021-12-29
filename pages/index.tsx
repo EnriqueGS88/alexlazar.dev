@@ -59,10 +59,10 @@ export default function Home({ posts }: { posts: IfcPost[] }) {
                     </p>
                     <Link href={`/posts/${post.slug}/`}>
                       <a className="block mt-2 hover:opacity-60">
-                        <p className="text-xl font-semibold text-gray-100">
+                        <p className="text-xl font-semibold text-gray-900 dark:text-gray-50">
                           {post.meta.title}
                         </p>
-                        <p className="mt-3 text-base text-gray-300">
+                        <p className="mt-3 text-base text-gray-700 dark:text-gray-100">
                           {post.meta.excerpt}
                         </p>
                       </a>
