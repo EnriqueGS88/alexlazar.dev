@@ -1,15 +1,8 @@
 import React from "react";
 import Link from "next/link";
+import IfcButtonProps from "../utils/IfcButtonProps";
 
-function Button({
-  children,
-  type,
-  href,
-}: {
-  children?: any;
-  type: "submit" | "link";
-  href?: string;
-}) {
+function Button({ children, type, href }: IfcButtonProps) {
   if (type === "link") {
     return (
       <Link href={href}>
