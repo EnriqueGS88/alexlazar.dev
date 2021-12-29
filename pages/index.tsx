@@ -5,15 +5,17 @@ import Metatags from "../components/Metatags";
 import Footer from "../components/Footer";
 import Link from "next/link";
 import IfcPostMeta from "../utils/IfcPostMeta";
+import getAllPosts from "../utils/getAllPosts";
+import IfcPost from "../utils/IfcPost";
 
 export async function getStaticProps(context) {
-  const posts = [{}];
+  const posts = getAllPosts();
   return {
     props: { posts },
   };
 }
 
-export default function Home({ posts }: { posts: IfcPostMeta[] }) {
+export default function Home({ posts }: { posts: IfcPost[] }) {
   return (
     <div className="font-mono">
       <Head>
@@ -45,23 +47,23 @@ export default function Home({ posts }: { posts: IfcPostMeta[] }) {
           <div className="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
             {posts.map((post) => (
               <div
-                key={post.title}
+                key={post.meta.title}
                 className="flex flex-col border-2 border-black overflow-hidden"
               >
                 <div className="z-[2] relative flex-1 bg-yellow-50 dark:bg-gray-700 p-6 flex flex-col justify-between">
                   <div className="flex-1">
                     <p className="text-sm font-medium text-white">
                       <span className="inline-block bg-black px-3 py-2">
-                        {post.category}
+                        {post.meta.category}
                       </span>
                     </p>
                     <Link href={`/posts/${post.slug}/`}>
                       <a className="block mt-2 hover:opacity-60">
                         <p className="text-xl font-semibold text-gray-100">
-                          {post.title}
+                          {post.meta.title}
                         </p>
                         <p className="mt-3 text-base text-gray-300">
-                          {post.excerpt}
+                          {post.meta.excerpt}
                         </p>
                       </a>
                     </Link>
@@ -88,9 +90,9 @@ export default function Home({ posts }: { posts: IfcPostMeta[] }) {
                 </div>
                 <figcaption className="relative bg-black px-6 py-2 flex items-center text-sm text-white">
                   <div className="flex space-x-1">
-                    <time dateTime={post.date}>{post.date}</time>
+                    <time dateTime={post.meta.date}>{post.meta.date}</time>
                     <span aria-hidden="true">&middot;</span>
-                    <span>{post.readingTime} read</span>
+                    <span>{post.meta.readingTime} read</span>
                   </div>
                 </figcaption>
               </div>

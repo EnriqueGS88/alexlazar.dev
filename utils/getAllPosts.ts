@@ -1,7 +1,12 @@
 import getPostsSlugs from "../utils/getPostsSlugs";
 import getPostBySlug from "./getPostBySlug";
+import IfcPost from "../utils/IfcPost";
 
-export default function getAllPosts(fields = []) {
+/**
+ *
+ * @returns an array of all posts
+ */
+export default function getAllPosts(): IfcPost[] {
   const slugs = getPostsSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
