@@ -12,6 +12,7 @@ export async function getStaticProps(context) {
   const posts = getAllPosts();
   return {
     props: { posts },
+    revalidate: 60 * 60 * 24, // reavlidate daily
   };
 }
 

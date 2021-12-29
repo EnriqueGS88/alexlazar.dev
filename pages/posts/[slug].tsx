@@ -19,6 +19,7 @@ export async function getStaticProps(context) {
   const content: string = await markdownToHtml(post.content || "");
   return {
     props: { meta, content },
+    revalidate: 60 * 60 * 24, // reavlidate daily
   };
 }
 
