@@ -1,7 +1,7 @@
 import getPostsSlugs from "../utils/getPostsSlugs";
 import getPostBySlug from "./getPostBySlug";
 
-export function getAllPosts(fields = []) {
+export default function getAllPosts(fields = []) {
   const slugs = getPostsSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))

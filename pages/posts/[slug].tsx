@@ -10,24 +10,39 @@ import parse from "html-react-parser";
 import IfcPostMeta from "../../utils/IfcPostMeta";
 import getPostBySlug from "../../utils/getPostBySlug";
 import markdownToHtml from "../../utils/markdownToHTML";
+import getAllPosts from "../../utils/getAllPosts";
 
 export async function getStaticProps(context) {
   const post = getPostBySlug(context.params.slug);
+  const meta = post.meta;
+  const content = await markdownToHtml(post.content || "");
   return {
-    props: { post },
+    props: { meta, content },
   };
 }
 
 export async function getStaticPaths() {
+  const posts = getAllPosts();
   return {
-    paths: [{ params: { slug: "hello-world" } }],
+    paths: posts.map((post) => {
+      return {
+        params: {
+          slug: post.slug,
+        },
+      };
+    }),
     fallback: false,
   };
 }
 
-export default function Post({ post }: any) {
-  const meta: IfcPostMeta = post.meta;
-  console.log("post:", post);
+export default function Post({
+  meta,
+  content,
+}: {
+  meta: IfcPostMeta;
+  content: any;
+}) {
+  console.log("content:", content);
 
   return (
     <div className="font-mono overflow-hidden bg-white dark:bg-gray-900 z-[-3]">
@@ -99,7 +114,7 @@ export default function Post({ post }: any) {
               
               text-gray-600 dark:text-white mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1"
             >
-              {markdownToHtml(post.content)}
+              {content}
             </div>
           </div>
           <div className="relative lg:row-start-1 lg:col-start-3">
