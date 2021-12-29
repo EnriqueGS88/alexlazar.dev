@@ -1,3 +1,5 @@
+import axios from "axios";
+
 /**
  *
  * @param email email of user to be subscribed to newsletter
@@ -12,7 +14,7 @@ export default async function subscribeToNewsletter(
     "Content-Type": "application/json; charset=utf-8",
   };
 
-  let reqOptions = JSON.stringify({
+  let reqOptions = {
     url: "https://api.convertkit.com/v3/forms/2871455/subscribe",
     method: "POST",
     headers: headersList,
@@ -20,12 +22,11 @@ export default async function subscribeToNewsletter(
       '{ \n    "api_key": "NeIvJhiL4Cv-vr1w3_XIvg",\n    "email": "' +
       email +
       '"\n}',
+  };
+
+  //@ts-ignore
+  axios.request(reqOptions).then(function (response) {
+    console.log(response.data);
   });
-
-  // TODO integrate form with Convertkit
-
-  // axios.request(reqOptions).then(function (response) {
-  //   console.log(response.data);
-  // });
   return true;
 }
