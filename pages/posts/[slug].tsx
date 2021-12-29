@@ -21,7 +21,6 @@ const coverImage = {
 const summary =
   "Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque. Blandit amet, sed aenean erat arcu morbi.";
 
-// TODO make sure md also supports nice styling and dark mode styling
 const content = `<p>
                 Sollicitudin <u>tristique eros erat</u> odio sed vitae, consequat
                 turpis elementum. <mark>Lorem nibh vel</mark>, eget pretium arcu vitae. Eros
@@ -117,8 +116,6 @@ const content = `<p>
               </p>`;
 
 export default function Post() {
-  // TODO make backend with .md
-
   async function subscribeToNewsletter(email) {
     let headersList = {
       Accept: "*/*",
@@ -171,19 +168,65 @@ export default function Post() {
           </div>
         </div>
         <div className="mt-8 lg:grid lg:grid-cols-3 lg:gap-8">
+          <div className="my-8 lg:mt-0 lg:col-span-2">
+            <div className="text-base max-w-prose mx-auto lg:max-w-none border-b-2 py-4 border-b-black">
+              <p className="text-lg text-gray-900 dark:text-purple-200">
+                {summary}
+              </p>
+            </div>
+            <div
+              className="mt-5 prose prose-blue dark:prose-invert
+              prose-img:border-2 prose-img:border-black prose-img:mb-0 
+
+
+              prose-a:font-bold
+
+
+              prose-ol:border-black prose-ol:border-2 prose-ol:px-16 prose-ol:py-5 prose-ol:bg-yellow-50 
+              dark:prose-ol:bg-teal-600 prose-ol:text-black prose-ol:decoration-black prose-ol:my-4
+              prose-ul:border-black prose-ul:border-2 prose-ul:px-16 prose-ul:py-5 prose-ul:bg-yellow-50 
+              dark:prose-ul:bg-teal-600 prose-ul:text-black prose-ul:decoration-black prose-ul:my-4
+              prose-li:text-black
+
+
+              prose-figcaption:mt-0 prose-figcaption:bg-black prose-figcaption:px-3 
+              prose-figcaption:py-2 prose-figcaption:text-white
+
+
+              prose-blockquote:text-4xl prose-blockquote:my-2 prose-blockquote:pl-3 
+              prose-blockquote:border-l-8 prose-blockquote:border-l-black dark:prose-blockquote:border-l-white
+
+
+              prose-pre:border-2 prose-pre:border-black prose-pre:rounded-none 
+              prose-pre:bg-purple-100 prose-pre:text-black prose-pre:relative
+              before:prose-pre:content-['code'] before:prose-pre:absolute 
+              prose-pre:overflow-visible before:prose-pre:bg-black before:prose-pre:text-white
+              before:prose-pre:px-3
+              before:prose-pre:-top-6 before:prose-pre:left-1 prose-pre:mt-10
+
+
+              prose-table:border-2 prose-table:border-black prose-th:p-4 prose-th:bg-yellow-50 
+              prose-th:border-y-2 prose-th:border-y-black prose-td:p-4 dark:prose-th:bg-teal-600 
+              dark:prose-table:bg-gray-800
+
+              
+              text-gray-600 dark:text-white mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1"
+            >
+              {parse(content)}
+            </div>
+          </div>
           <div className="relative lg:row-start-1 lg:col-start-3">
             <div className="text-base mx-auto max-w-prose lg:max-w-none">
               <figure>
-                <div className="relative aspect-w-12 aspect-h-7 lg:aspect-none">
-                  <div className="relative border-2 border-black box-content">
-                    <Image
-                      width={500}
-                      height={500}
-                      objectFit="cover"
-                      src={coverImage.url}
-                      alt={coverImage.altText}
-                    />
-                  </div>
+                <div className="aspect-w-12 aspect-h-7 lg:aspect-none">
+                  {/* we are not using the Image component here because it creates a TON of style issues */}
+                  <img
+                    className="border-2 border-black object-cover object-center"
+                    width={500}
+                    height={500}
+                    src={coverImage.url}
+                    alt={coverImage.altText}
+                  />
                 </div>
                 <figcaption className="relative -top-3 bg-black px-3 py-2 flex text-sm text-white">
                   <CameraIcon
@@ -242,55 +285,6 @@ export default function Post() {
                   🇷🇴.
                 </p>
               </div>
-            </div>
-          </div>
-          <div className="mt-8 lg:mt-0 lg:col-span-2">
-            <div className="text-base max-w-prose mx-auto lg:max-w-none border-b-2 py-4 border-b-black">
-              <p className="text-lg text-gray-900 dark:text-purple-200">
-                {summary}
-              </p>
-            </div>
-            {/* TODO figure out how to make list markers black */}
-            <div
-              className="mt-5 prose prose-blue dark:prose-invert
-              prose-img:border-2 prose-img:border-black prose-img:mb-0 
-
-
-              prose-a:font-bold
-
-
-              prose-ol:border-black prose-ol:border-2 prose-ol:px-16 prose-ol:py-5 prose-ol:bg-yellow-50 
-              dark:prose-ol:bg-teal-600 prose-ol:text-black prose-ol:decoration-black prose-ol:my-4
-              prose-ul:border-black prose-ul:border-2 prose-ul:px-16 prose-ul:py-5 prose-ul:bg-yellow-50 
-              dark:prose-ul:bg-teal-600 prose-ul:text-black prose-ul:decoration-black prose-ul:my-4
-              prose-li:text-black
-
-
-              prose-figcaption:mt-0 prose-figcaption:bg-black prose-figcaption:px-3 
-              prose-figcaption:py-2 prose-figcaption:text-white
-
-
-              prose-blockquote:text-4xl prose-blockquote:my-2 prose-blockquote:pl-3 
-              prose-blockquote:border-l-8 prose-blockquote:border-l-black dark:prose-blockquote:border-l-white
-
-
-              prose-pre:border-2 prose-pre:border-black prose-pre:rounded-none 
-              prose-pre:bg-purple-100 prose-pre:text-black prose-pre:relative
-              before:prose-pre:content-['code'] before:prose-pre:absolute 
-              prose-pre:overflow-visible before:prose-pre:bg-black before:prose-pre:text-white
-              before:prose-pre:px-3
-              before:prose-pre:-top-6 before:prose-pre:left-1 prose-pre:mt-10
-
-
-              prose-table:border-2 prose-table:border-black prose-th:p-4 prose-th:bg-yellow-50 
-              prose-th:border-y-2 prose-th:border-y-black prose-td:p-4 dark:prose-th:bg-teal-600 
-              dark:prose-table:bg-gray-800
-
-              
-              text-gray-600 dark:text-white mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1"
-            >
-              {/* TODO how do I insert the content without parsing what's in <code> */}
-              {parse(content)}
             </div>
           </div>
         </div>
