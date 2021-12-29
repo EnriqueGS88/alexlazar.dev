@@ -19,4 +19,4 @@ But... **hello world**, welcome to my blog.
 
 Cheers!
 
-P.S.: I actually still need to integrate ConvertKit in that newsletter form you see, but whatever.
+P.S.: I actually still need to integrate ConvertKit in that newsletter form you see, but whatever. Aaaand I need to deploy to my domain which I'm having transfer issues with 😅🤯
