@@ -7,16 +7,24 @@ import Image from "next/image";
 import axios from "axios";
 import Footer from "../../components/Footer";
 import parse from "html-react-parser";
-import IfcPost from "../../utils/IfcPost";
+import IfcPostMeta from "../../utils/IfcPostMeta";
+import getPostBySlug from "../../utils/getPostBySlug";
 
 export async function getStaticProps(context) {
-  const post = [{}];
+  const post = getPostBySlug(context.params.slug);
   return {
     props: { post },
   };
 }
 
-export default function Post({ post }: { post: IfcPost }) {
+export async function getStaticPaths() {
+  return {
+    paths: [{ params: { slug: "hello-world" } }],
+    fallback: false,
+  };
+}
+
+export default function Post({ post }: { post: IfcPostMeta }) {
   async function subscribeToNewsletter(email) {
     let headersList = {
       Accept: "*/*",

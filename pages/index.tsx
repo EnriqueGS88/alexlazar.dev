@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Metatags from "../components/Metatags";
 import Footer from "../components/Footer";
 import Link from "next/link";
-import IfcPost from "../utils/IfcPost";
+import IfcPostMeta from "../utils/IfcPostMeta";
 
 export async function getStaticProps(context) {
   const posts = [{}];
@@ -13,7 +13,7 @@ export async function getStaticProps(context) {
   };
 }
 
-export default function Home({ posts }: { posts: IfcPost[] }) {
+export default function Home({ posts }: { posts: IfcPostMeta[] }) {
   return (
     <div className="font-mono">
       <Head>
