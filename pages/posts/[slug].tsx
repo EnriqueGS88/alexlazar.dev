@@ -252,8 +252,11 @@ export default function Post() {
             </div>
             {/* TODO figure out how to make list markers black */}
             <div
-              className="mt-5 prose prose-indigo dark:prose-invert
+              className="mt-5 prose prose-blue dark:prose-invert
               prose-img:border-2 prose-img:border-black prose-img:mb-0 
+
+
+              prose-a:font-bold
 
 
               prose-ol:border-black prose-ol:border-2 prose-ol:px-16 prose-ol:py-5 prose-ol:bg-yellow-50 
