@@ -13,7 +13,7 @@ readingTime: "1 min"
 
 I've put in a good 3 days into building this .md file based blog, and I actually really like it.
 
-I'm to spent to write anything right now though.
+I'm too spent to write anything right now though.
 
 But... **hello world**, welcome to my blog.
 
