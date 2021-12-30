@@ -8,7 +8,7 @@ export default function ArticleContent({ children }) {
               prose-img:border-2 prose-img:border-black prose-img:mb-0 
 
 
-              prose-a:font-bold
+              prose-a:font-bold prose-strong:font-extrabold
 
 
               prose-ol:border-black prose-ol:border-2 prose-ol:px-16 prose-ol:py-5 prose-ol:bg-yellow-50 
