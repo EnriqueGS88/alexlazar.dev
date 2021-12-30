@@ -3,6 +3,7 @@ import Head from "next/head";
 import Metatags from "../components/Metatags";
 import Image from "next/image";
 import Link from "next/link";
+import { CameraIcon } from "@heroicons/react/solid";
 
 export default function Error() {
   return (
@@ -55,6 +56,13 @@ export default function Error() {
             src="/404.jpg"
             alt="Picture of the author"
           />
+          <figcaption className="absolute w-full bottom-0 bg-black px-3 py-2 flex text-sm text-white">
+            <CameraIcon
+              className="flex-none w-5 h-5 text-white"
+              aria-hidden="true"
+            />
+            <span className="ml-2">Village in Maramures, Transylvania</span>
+          </figcaption>
         </div>
       </div>
     </div>
