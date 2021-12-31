@@ -8,7 +8,7 @@ coverImage:
   caption: "Assumption Cathedral, Cluj-Napoca"
 date: "2021-12-29"
 category: "General"
-readingTime: "10 min"
+readingTime: "6 min"
 ---
 
 ## My first PC 👨🏻‍💻

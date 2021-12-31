@@ -8,7 +8,7 @@ coverImage:
   caption: "Corvins' Castle, Hunedoara"
 date: "2021-12-31"
 category: "General"
-readingTime: "10 min"
+readingTime: "7 min"
 ---
 
 ## I made almost $20k this year and I'm quitting 🤯
