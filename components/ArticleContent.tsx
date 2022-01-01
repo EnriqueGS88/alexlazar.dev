@@ -2,6 +2,8 @@ import React from "react";
 import parse from "html-react-parser";
 
 export default function ArticleContent({ children }) {
+  // TODO how can I make links within the content be next.js links?
+  // it's important for performance
   return (
     <div
       className="mt-5 prose prose-blue dark:prose-invert
