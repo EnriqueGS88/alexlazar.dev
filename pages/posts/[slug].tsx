@@ -37,6 +37,13 @@ export async function getStaticPaths() {
   };
 }
 
+/**
+ *
+ * @TODO I need to implement JSX in MD or something similar so that
+ * 1. All in article links are Next.js Links which will improve performance
+ * 2. I can embed YT videos instead of just linking to them
+ */
+
 export default function Post({
   meta,
   content,
