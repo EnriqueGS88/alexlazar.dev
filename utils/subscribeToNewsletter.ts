@@ -1,3 +1,4 @@
+import splitbee from "@splitbee/web";
 import axios from "axios";
 
 interface IfcResponse {
@@ -42,6 +43,10 @@ export default async function subscribeToNewsletter(
     //@ts-ignore
     const response = await axios.request(reqOptions);
     if (response.status === 200) {
+      splitbee.user.set({
+        email: email,
+      });
+      splitbee.track("Email Newsletter Sign Up");
       return true;
     }
     return false;

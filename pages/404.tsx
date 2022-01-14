@@ -4,8 +4,10 @@ import Metatags from "../components/Metatags";
 import Image from "next/image";
 import Link from "next/link";
 import { CameraIcon } from "@heroicons/react/solid";
+import splitbee from "@splitbee/web";
 
 export default function Error() {
+  splitbee.track("404");
   return (
     <div className="font-mono h-full">
       <Helmet>
