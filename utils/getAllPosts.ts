@@ -14,3 +14,5 @@ export default function getAllPosts(): IfcPost[] {
     .sort((post1, post2) => (post1.meta.date > post2.meta.date ? -1 : 1));
   return posts;
 }
+// TODO it would be cool if this would only return articles that have a date equal or earliet to today
+// which would make it super easy to schedule articles

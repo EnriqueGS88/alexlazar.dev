@@ -39,9 +39,10 @@ export async function getStaticPaths() {
 
 /**
  *
- * @TODO I need to implement JSX in MD or something similar so that
+ * @TODO I need to implement MDX
  * 1. All in article links are Next.js Links which will improve performance
  * 2. I can embed YT videos instead of just linking to them
+ * 3. I could embed my newsletter signup form or otehr similar stuff
  */
 
 export default function Post({
