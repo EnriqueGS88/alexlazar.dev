@@ -54,7 +54,7 @@ He doesn't know I'm writing this & I'm not sure if he will ever read this, but I
 
 He is an amazing client. Super easy to work with, always has his copy & assets ready before I even need them, pays on time, knows what he wants and listens to expert advice.
 
-I'll be honest, he's my best client yet. If I had 5 guys like him, I might not be [quitting freelancing](https://alexlazar.dev/why-i-quit-freelancing) 😂.
+I'll be honest, he's my best client yet. If I had 5 guys like him, I might not be [quitting freelancing](https://alexlazar.dev/posts/why-i-quit-freelancing) 😂.
 
 To whomever works with him, if you do a good job and are serious about your work, I'm sure you'll find yourself very happy to have him as a client.
 
