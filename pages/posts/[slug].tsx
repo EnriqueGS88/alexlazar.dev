@@ -104,9 +104,10 @@ export default function Post({
               </p>
             </div>
             <ArticleContent>{content}</ArticleContent>
+            {/* TODO: a "suggested articles at the end of the article" */}
           </div>
           <div className="relative lg:row-start-1 lg:col-start-3">
-            <div className="text-base mx-auto max-w-prose lg:max-w-none">
+            <div className="h-full text-base mx-auto max-w-prose lg:max-w-none">
               <figure>
                 <div className="aspect-w-12 aspect-h-7 lg:aspect-none">
                   {/* we are not using the Image component here because it creates a TON of style issues */}
@@ -195,6 +196,7 @@ export default function Post({
                   flag 🇷🇴.
                 </p>
               </div>
+              {/* TODO a "go to the top" btn */}
             </div>
           </div>
         </div>

@@ -31,7 +31,7 @@ export default function ArticleContent({ children }) {
               prose-pre:border-2 prose-pre:border-black prose-pre:rounded-none 
               prose-pre:bg-purple-100 prose-pre:text-black prose-pre:relative
               before:prose-pre:content-['code'] before:prose-pre:absolute 
-              prose-pre:overflow-visible before:prose-pre:bg-black before:prose-pre:text-white
+              prose-pre:overflow-scroll before:prose-pre:bg-black before:prose-pre:text-white
               before:prose-pre:px-3
               before:prose-pre:-top-6 before:prose-pre:left-1 prose-pre:mt-10
 
