@@ -117,8 +117,8 @@ export default function Post({
                 A few other articles you may like
               </p>
               <div>
-                {recommendedPosts.map((post) => (
-                  <Link href={`/posts/${post.meta.slug}`}>
+                {recommendedPosts.map((post, index) => (
+                  <Link key={index} href={`/posts/${post.meta.slug}`}>
                     <a className="mt-2 block font-medium hover:no-underline">
                       {post.meta.title}
                     </a>
