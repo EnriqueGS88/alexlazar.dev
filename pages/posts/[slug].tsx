@@ -8,17 +8,20 @@ import IfcPostMeta from "../../utils/IfcPostMeta";
 import getPostBySlug from "../../utils/getPostBySlug";
 import markdownToHtml from "../../utils/markdownToHTML";
 import getAllPosts from "../../utils/getAllPosts";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import subscribeToNewsletter from "../../utils/subscribeToNewsletter";
 import Button from "../../components/Button";
 import ArticleContent from "../../components/ArticleContent";
+import getRandomPosts from "../../utils/getRandomPosts";
+import Link from "next/link";
 
 export async function getStaticProps(context) {
   const post: IfcPost = getPostBySlug(context.params.slug);
   const meta: IfcPostMeta = post.meta;
   const content: string = await markdownToHtml(post.content || "");
+  const recommendedPosts: IfcPost[] = getRandomPosts(3);
   return {
-    props: { meta, content },
+    props: { meta, content, recommendedPosts },
     revalidate: 60 * 60 * 24, // revalidate daily
   };
 }
@@ -45,13 +48,17 @@ export async function getStaticPaths() {
  * 3. I could embed my newsletter signup form or otehr similar stuff
  */
 
+interface IfcPostPageProps {
+  meta: IfcPostMeta;
+  content: string;
+  recommendedPosts: IfcPost[];
+}
+
 export default function Post({
   meta,
   content,
-}: {
-  meta: IfcPostMeta;
-  content: string;
-}) {
+  recommendedPosts,
+}: IfcPostPageProps) {
   const [email, setEmail] = useState("");
   /**
    *  this state will be used to differentiate between people that haven't subscribed, people that
@@ -104,7 +111,21 @@ export default function Post({
               </p>
             </div>
             <ArticleContent>{content}</ArticleContent>
-            {/* TODO: a "suggested articles at the end of the article" */}
+            {/* TODO: a way for people to like the article? */}
+            <div className="mt-5 relative bg-yellow-50 dark:bg-teal-600 z-[0] px-3 py-4 text-md text-black prose border-2 border-black">
+              <p className="text-lg font-bold">
+                A few other articles you may like
+              </p>
+              <div>
+                {recommendedPosts.map((post) => (
+                  <Link href={`/posts/${post.meta.slug}`}>
+                    <a className="mt-2 block font-medium hover:no-underline">
+                      {post.meta.title}
+                    </a>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
           <div className="relative lg:row-start-1 lg:col-start-3">
             <div className="h-full text-base mx-auto max-w-prose lg:max-w-none">
@@ -195,6 +216,18 @@ export default function Post({
                   *Fun fact* The 3 colors under the navbar are {"Romania's"}{" "}
                   flag 🇷🇴.
                 </p>
+              </div>
+              <div className="mt-6 relative bg-gray-50 dark:bg-gray-400 z-[0] px-3 py-4 text-md text-black prose border-2 border-black">
+                <p className="font-bold">A few other articles you may like</p>
+                <div>
+                  {recommendedPosts.map((post) => (
+                    <Link href={`/posts/${post.meta.slug}`}>
+                      <a className="mt-2 block hover:no-underline">
+                        {post.meta.title}
+                      </a>
+                    </Link>
+                  ))}
+                </div>
               </div>
               {/* TODO a "go to the top" btn */}
             </div>
