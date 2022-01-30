@@ -13,7 +13,7 @@ export default function getAllPosts(): IfcPost[] {
     .map((slug) => getPostBySlug(slug))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.meta.date > post2.meta.date ? -1 : 1))
-    // remove posts that have a date in the future
+    // remove posts that have a date in the future (great for scheduling posts)
     .filter((post) => {
       if (Date.parse(post.meta.date) > Date.now()) return false;
       return post;
