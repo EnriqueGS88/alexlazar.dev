@@ -220,8 +220,8 @@ export default function Post({
               <div className="mt-6 relative bg-gray-50 dark:bg-gray-400 z-[0] px-3 py-4 text-md text-black prose border-2 border-black">
                 <p className="font-bold">A few other articles you may like</p>
                 <div>
-                  {recommendedPosts.map((post) => (
-                    <Link href={`/posts/${post.meta.slug}`}>
+                  {recommendedPosts.map((post, index) => (
+                    <Link key={index} href={`/posts/${post.meta.slug}`}>
                       <a className="mt-2 block hover:no-underline">
                         {post.meta.title}
                       </a>
