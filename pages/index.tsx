@@ -9,6 +9,7 @@ import Button from "../components/Button";
 
 export async function getStaticProps(context) {
   const posts = getAllPosts();
+  // caca2
   return {
     props: { posts },
     revalidate: 60 * 60 * 24, // revalidate daily
