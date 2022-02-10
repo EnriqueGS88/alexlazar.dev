@@ -8,7 +8,7 @@ coverImage:
   caption: "Cetatea Alba, Alba Iulia"
 date: "2022-02-10"
 category: "Case Study"
-readingTime: "11 min"
+readingTime: "20 min"
 ---
 
 # Carbon Offsetting 101
