@@ -39,8 +39,7 @@ export default function Home({ posts }: { posts: IfcPost[] }) {
             </h2>
             <div className="mt-3 sm:mt-4">
               <p className="mt-3 max-w-4xl text-xl text-gray-500 dark:text-purple-200 sm:mt-4">
-                {"I'm"} a front-end focused engineer working on web3 projects.
-                On this blog, I will try my best to document my career and
+                In this blog, I will try my best to document my career and
                 learning experiences.
               </p>
             </div>
