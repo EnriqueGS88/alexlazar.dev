@@ -148,69 +148,6 @@ export default function Post({
                   <span className="ml-2">{meta.coverImage.caption}</span>
                 </figcaption>
               </figure>
-              <div className="mt-3 relative bg-yellow-50 dark:bg-teal-600 z-[0] px-3 py-4 text-md text-black prose border-2 border-black">
-                {subscriberStatus == "subscribed" ? (
-                  <div>
-                    <p>Hey, thanks a lot for subscribing to my newsletter!</p>
-                    <p>
-                      You will receive a confirmation email soon. Please confirm
-                      your subscription to receive my future emails.
-                    </p>
-                  </div>
-                ) : (
-                  <div>
-                    {subscriberStatus == "notSubscribed" ? (
-                      <div>
-                        <p>
-                          You can subscribe to my newsletter to receive
-                          notifications when I post new content.
-                        </p>
-                        <p>
-                          I {"won't"} spam you and you can unsubscribe at any
-                          time.
-                        </p>
-                      </div>
-                    ) : (
-                      <div>
-                        <p>
-                          Some sort of error happened when trying to subscribe
-                          you. Please try again.
-                        </p>
-                      </div>
-                    )}
-                    <form className="z-[1]" onSubmit={handleNewsletterSubmit}>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium"
-                      >
-                        Email
-                      </label>
-                      <div className="mt-1">
-                        <input
-                          type="email"
-                          name="email"
-                          id="email"
-                          autoComplete="email"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          className="py-3 px-5 text-md border border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 text-black block w-full"
-                        />
-                      </div>
-                      <Button type="submit">
-                        <div className="relative left-1 transition-all opacity-80 group-hover:left-0 group-hover:opacity-100">
-                          Subscribe
-                          <span className="transition-all group-hover:opacity-0 group-hover:">
-                            ...
-                          </span>
-                          <span className="relative transition-all opacity-0 left-0 group-hover:opacity-100 group-hover:-left-4">
-                            {"📧"}
-                          </span>
-                        </div>
-                      </Button>
-                    </form>
-                  </div>
-                )}
-              </div>
               <div className="mt-6 relative bg-gray-50 dark:bg-gray-400 z-[0] px-3 py-4 text-md text-black prose border-2 border-black">
                 <p>
                   *Fun fact* The 3 colors under the navbar are {"Romania's"}{" "}
